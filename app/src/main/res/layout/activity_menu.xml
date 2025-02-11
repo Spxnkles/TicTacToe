@@ -2,42 +2,45 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/title2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="75dp"
-        android:text="TextView"
+        android:text="TIC TAC TOE"
         android:textSize="60sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="TIC TAC TOE" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="326dp"
-        android:layout_height="73dp"
-        android:layout_marginBottom="25dp"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        android:text="1 Player"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="326dp"
         android:layout_height="73dp"
-        android:layout_marginBottom="75dp"
+        android:layout_marginBottom="25dp"
         android:insetTop="0dp"
         android:insetBottom="0dp"
+        android:onClick="startSP"
+        android:text="1 Player"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="326dp"
+        android:layout_height="73dp"
+        android:layout_marginBottom="80dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="startMultiplayer"
         android:text="2 Players"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -48,11 +51,10 @@
         android:id="@+id/subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="By Pavol Martin Boleček"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title"
-        tools:text="By Pavol Martin Boleček" />
+        app:layout_constraintTop_toBottomOf="@+id/title2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

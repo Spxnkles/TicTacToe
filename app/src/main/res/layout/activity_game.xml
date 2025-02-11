@@ -2,10 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
     <Button
         android:id="@+id/topLeft"
@@ -153,18 +151,22 @@
 
     <Button
         android:id="@+id/menuReturn"
-        android:layout_width="103dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="-25dp"
-        android:layout_marginTop="-4dp"
+        android:layout_width="89dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="18dp"
         android:background="#00000000"
         android:backgroundTint="#00FFFFFF"
         android:insetTop="0dp"
         android:insetBottom="0dp"
-        android:rotation="180"
-        android:text="❯❯❯"
+        android:onClick="menuReturn"
+        android:paddingLeft="10dp"
+        android:paddingRight="0dp"
+        android:text="Return"
+        android:textAlignment="viewStart"
         android:textColor="#49454F"
-        android:textSize="24sp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:cornerRadius="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
