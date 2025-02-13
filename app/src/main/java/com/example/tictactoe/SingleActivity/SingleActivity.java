@@ -1,12 +1,18 @@
 package com.example.tictactoe.SingleActivity;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.tictactoe.R;
@@ -26,6 +32,12 @@ public class SingleActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_game);
 
+        findViewById(R.id.label).post(new Runnable() {
+            @Override
+            public void run() {
+                showPopup();
+            }
+        });
 
 //        Multiplayer game initialization
         gameBoard[0][0] = findViewById(R.id.topLeft);
@@ -120,6 +132,8 @@ public class SingleActivity extends AppCompatActivity {
 
         TextView label = findViewById(R.id.label);
 
+        showPopup();
+
         playerTurn = Player.X;
         label.setText("Player X Turn");
         roundCount = 0;
@@ -197,6 +211,37 @@ public class SingleActivity extends AppCompatActivity {
         String winText = "Player " + player.toString() + " Wins!";
         label.setText(winText);
     }
+
+    public void choosePlayerX(View view){
+    }
+
+    public void choosePlayerO(View view){
+        aiTurn();
+    }
+
+    public void showPopup(){
+        final Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.player_select);
+        dialog.setCancelable(false);
+
+        dialog.findViewById(R.id.X).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.findViewById(R.id.O).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                aiTurn();
+            }
+        });
+
+        dialog.show();
+        }
+
     //    Function to return to menu
     public void menuReturn(View view){
         this.finish();

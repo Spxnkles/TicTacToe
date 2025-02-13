@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
+    <color name="playerX">#C24B39</color>
+    <color name="playerO">#78ACCC</color>
 </resources>

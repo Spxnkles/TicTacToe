@@ -12,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.tictactoe.MultiActivity.MultiActivity;
 import com.example.tictactoe.SingleActivity.SingleActivity;
+import com.google.android.material.color.DynamicColors;
 
 public class MainActivity extends AppCompatActivity {
 
